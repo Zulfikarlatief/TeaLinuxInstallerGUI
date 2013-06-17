@@ -22,6 +22,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             // TODO code application logic here
+            
             UIManager.setLookAndFeel(new NimbusLookAndFeel());
             SwingUtilities.invokeLater(new Runnable() {
 
@@ -39,7 +40,7 @@ public class Main {
 
                 
             });
-        } catch (UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

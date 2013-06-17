@@ -42,47 +42,47 @@ public class IdeController {
     }
     
     public void codeBlockInstall(){
-        setCommand("IDE_Pack/codeblocks.tea");
+        setCommand("sh /media/TEA5KKC/IDEPACK/Codeblocks.tea");
         bashExecute();
     }
     
     public void netBeansInstall(){
-        setCommand("IDE_Pack/netbeans.tea");
+        setCommand("sh /media/TEA5KKC/IDEPACK/netbeans-7.2.1-ml-linux.sh");
         bashExecute();
     }
     
     public void eclipseInstall(){
-        setCommand("IDE_Pack/ceclipse.tea");
+        setCommand("sh /media/TEA5KKC/IDEPACK/Eclipse.tea");
         bashExecute();
     }
     
     public void boaConstructorInstall(){
-        setCommand("IDE_Pack/boaconstructor.tea");
+        setCommand("sh /media/TEA5KKC/IDEPACK/Boa.tea");
         bashExecute();
     }
     
     public void gladeInstall(){
-        setCommand("IDE_Pack/glade.tea");
+        setCommand("sh /media/TEA5KKC/IDEPACK/Glade.tea");
         bashExecute();
     }
     
     public void anjutaInstall(){
-        setCommand("IDE_Pack/anjuta.tea");
+        setCommand("sh /media/TEA5KKC/IDEPACK/Anjuta.tea");
         bashExecute();
     }
     
     public void bluefishInstall(){
-        setCommand("IDE_Pack/bluefish.tea");
+        setCommand("sh /media/TEA5KKC/IDEPACK/Bluefish.tea");
         bashExecute();
     }
     
     public void gambasInstall(){
-        setCommand("IDE_Pack/gambas.tea");
+        setCommand("sh /media/TEA5KKC/IDEPACK/Gambas.tea");
         bashExecute();
     }
     
     public void aptanaInstall(){
-        setCommand("IDE_Pack/aptana.tea");
+        setCommand("sh /media/TEA5KKC/IDEPACK/Aptana.tea");
         bashExecute();
     }
 }

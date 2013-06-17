@@ -14,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Timer;
+import javax.swing.UIManager;
 
 
 
@@ -22,7 +23,7 @@ import javax.swing.Timer;
  * @author zword
  */
 public class FrameUtama extends javax.swing.JFrame implements ActionListener{
-     Timer time = new Timer(5000, this);
+     Timer time = new Timer(3000, this);
     /**
      * Creates new form FrameUtama
      */
@@ -105,10 +106,16 @@ public class FrameUtama extends javax.swing.JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent arg0) {
         try {
+            com.jtattoo.plaf.noire.NoireLookAndFeel.setTheme("Large-Font",
+                                                                "Java Swing","");
+            UIManager.setLookAndFeel("com.jtattoo.plaf.noire.NoireLookAndFeel");
             new InstallerFrame().setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(FrameUtama.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(Exception e){
+            e.printStackTrace();
         }
+        
         this.dispose();
         time.stop();
     }

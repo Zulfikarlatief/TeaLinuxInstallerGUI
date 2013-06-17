@@ -5,26 +5,61 @@
 package com.doscom.TeaLinuxInstaller.view;
 
 import java.awt.Dimension;
+import java.awt.Frame;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
  * @author zword
  */
-public class InstallerFrame extends javax.swing.JFrame {
+public class InstallerFrame extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form Test
      */
+    Timer time = new Timer(1000,this);
+    
     public InstallerFrame() throws IOException {
         initComponents();
+       // this.initForm();
         this.setResizable(false);
         Image i = ImageIO.read(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/tealogo.png"));
         setIconImage(i);       
         centerWindow();
+        time.start();
+    }
+    
+    private void initForm(){
+        Toolkit tk = Toolkit.getDefaultToolkit();  
+        int xSize = ((int) tk.getScreenSize().getWidth());  
+        int ySize = ((int) tk.getScreenSize().getHeight());  
+        this.setSize(xSize,ySize);   
+    }
+    
+    private void Warning() throws IOException{
+        
+        JOptionPane jop = new JOptionPane(
+            "Please Insert TeaLinux 5.0 DVD ",
+            JOptionPane.QUESTION_MESSAGE,
+            JOptionPane.DEFAULT_OPTION
+            );
+
+        JDialog dialog = jop.createDialog("Warning");
+
+        Image image = ImageIO.read(getClass().getResource(
+            "/com/doscom/TeaLinuxInstaller/picture/tealogo.png"));
+        dialog.setIconImage( image );
+        dialog.setVisible(true);
     }
     
     private void centerWindow(){
@@ -48,27 +83,80 @@ public class InstallerFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainInstaller1 = new com.doscom.TeaLinuxInstaller.view.MainInstaller();
+        remake1 = new com.doscom.TeaLinuxInstaller.view.Remake();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listIDE2 = new com.doscom.TeaLinuxInstaller.view.ListIDE();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        displayPanel1 = new com.doscom.TeaLinuxInstaller.view.DisplayPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TeaLinux IDE Installer");
-        setPreferredSize(new java.awt.Dimension(910, 590));
+
+        remake1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jScrollPane1.setViewportView(listIDE2);
+
+        javax.swing.GroupLayout remake1Layout = new javax.swing.GroupLayout(remake1);
+        remake1.setLayout(remake1Layout);
+        remake1Layout.setHorizontalGroup(
+            remake1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, remake1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        remake1Layout.setVerticalGroup(
+            remake1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, remake1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jTextArea1.setOpaque(false);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jButton1.setText("Install");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(mainInstaller1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(58, 58, 58))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(displayPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)))
+                .addComponent(remake1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(mainInstaller1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(remake1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(29, 29, 29)
+                        .addComponent(displayPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))))
         );
 
         pack();
@@ -79,6 +167,22 @@ public class InstallerFrame extends javax.swing.JFrame {
      */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.doscom.TeaLinuxInstaller.view.MainInstaller mainInstaller1;
+    private com.doscom.TeaLinuxInstaller.view.DisplayPanel displayPanel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private com.doscom.TeaLinuxInstaller.view.ListIDE listIDE2;
+    private com.doscom.TeaLinuxInstaller.view.Remake remake1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent arg0) {
+        try {
+            Warning();
+        } catch (IOException ex) {
+            Logger.getLogger(InstallerFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }    
+        time.stop();
+    }
 }
