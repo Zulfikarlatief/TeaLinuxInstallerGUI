@@ -60,7 +60,7 @@ public class ButtonImage extends JButton{
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D gd = (Graphics2D) g.create();     
-        gd.drawImage(image, 0, 0,400,230,null);
+        gd.drawImage(image, 0, 0,400,240,null);
         gd.dispose();
         super.paintComponent(g);
     }

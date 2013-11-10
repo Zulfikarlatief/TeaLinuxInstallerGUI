@@ -27,15 +27,21 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
     /**
      * Creates new form Test
      */
+    
+    DisplayPanel dp;
+    
     Timer time = new Timer(1000,this);
     
     public InstallerFrame() throws IOException {
         initComponents();
+        listIDE2.setFrame(this);
        // this.initForm();
         this.setResizable(false);
         Image i = ImageIO.read(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/tealogo.png"));
         setIconImage(i);       
         centerWindow();
+        setDisplay("init");
+        
         time.start();
     }
     
@@ -45,6 +51,16 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
         int ySize = ((int) tk.getScreenSize().getHeight());  
         this.setSize(xSize,ySize);   
     }
+    
+    public void setDisplay(String Ide){
+        if(null!=dp)
+            dp.dispose();
+  
+        dp = new DisplayPanel(Ide);
+        jDesktopPane1.add(dp);
+        dp.setVisible(true);
+    }
+    
     
     private void Warning() throws IOException{
         
@@ -89,7 +105,7 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
-        displayPanel1 = new com.doscom.TeaLinuxInstaller.view.DisplayPanel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TeaLinux IDE Installer");
@@ -136,7 +152,7 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
                         .addGap(58, 58, 58))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(displayPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)))
                 .addComponent(remake1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,9 +168,9 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(29, 29, 29)
-                        .addComponent(displayPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39))))
         );
@@ -167,8 +183,8 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
      */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.doscom.TeaLinuxInstaller.view.DisplayPanel displayPanel1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;

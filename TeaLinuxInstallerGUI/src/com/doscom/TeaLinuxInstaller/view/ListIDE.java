@@ -12,15 +12,27 @@ import javax.swing.ImageIcon;
  */
 public class ListIDE extends javax.swing.JPanel {
     
-    DisplayPanel display;
+    
+    InstallerFrame frame;
     
     /**
      * Creates new form ListIDE
      */
     public ListIDE() {
         initComponents();
-        display = new DisplayPanel();
+       
+        
     }
+
+    public InstallerFrame getFrame() {
+        return frame;
+    }
+
+    public void setFrame(InstallerFrame frame) {
+        this.frame = frame;
+    }
+    
+    
     
     public void allPanelRise(){
         panelIDE1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -118,8 +130,7 @@ public class ListIDE extends javax.swing.JPanel {
         // TODO add your handling code here:
         allPanelRise();
         panelIDE1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        display.changeImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/netbeans-logo.jpg")).getImage());
-        
+        frame.setDisplay("init");
     }//GEN-LAST:event_panelIDE1MouseClicked
 
     private void panelIDE2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE2MouseClicked
@@ -131,7 +142,7 @@ public class ListIDE extends javax.swing.JPanel {
     private void panelIDE3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE3MouseClicked
         // TODO add your handling code here:
         allPanelRise();
-        panelIDE2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        panelIDE3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
     }//GEN-LAST:event_panelIDE3MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

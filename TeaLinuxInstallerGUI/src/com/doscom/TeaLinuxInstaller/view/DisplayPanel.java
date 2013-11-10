@@ -4,27 +4,33 @@
  */
 package com.doscom.TeaLinuxInstaller.view;
 
-import java.awt.Image;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author zword
  */
-public class DisplayPanel extends javax.swing.JPanel {
+public class DisplayPanel extends javax.swing.JInternalFrame {
+
     /**
      * Creates new form DisplayPanel
      */
-    public DisplayPanel() {
+    public DisplayPanel(String Ide) {
         initComponents();
-        buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/KukichaDesk.png")).getImage());
+        
+        displaySelc(Ide);
+        
+        this.setRootPaneCheckingEnabled(false);
+        javax.swing.plaf.InternalFrameUI ifu= this.getUI();
+        ((javax.swing.plaf.basic.BasicInternalFrameUI)ifu).setNorthPane(null);
+
     }
     
-    public void changeImage(Image image){
-        buttonImage1.setImage(image);
-        
-    }
+    private void displaySelc(String Ide){
+        if(Ide == "init")
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/KukichaDesk.png")).getImage());
+
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,18 +43,20 @@ public class DisplayPanel extends javax.swing.JPanel {
 
         buttonImage1 = new com.doscom.TeaLinuxInstaller.template.ButtonImage();
 
-        setPreferredSize(new java.awt.Dimension(400, 230));
+        setPreferredSize(new java.awt.Dimension(406, 243));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buttonImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(buttonImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buttonImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(buttonImage1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.doscom.TeaLinuxInstaller.template.ButtonImage buttonImage1;
