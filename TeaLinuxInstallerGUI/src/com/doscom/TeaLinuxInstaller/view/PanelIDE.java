@@ -5,6 +5,9 @@
 package com.doscom.TeaLinuxInstaller.view;
 
 import java.awt.Color;
+import java.awt.Cursor;
+import javax.swing.ImageIcon;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -17,7 +20,18 @@ public class PanelIDE extends javax.swing.JPanel {
      */
     public PanelIDE() {
         initComponents();
+        
        // jTextArea1.setBackground();
+    }
+
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+    
+    
+    
+    public void setLogo(String image){
+        buttonIcon1.setImage(new ImageIcon(getClass().getResource(image)).getImage());
     }
 
     /**
@@ -34,8 +48,15 @@ public class PanelIDE extends javax.swing.JPanel {
         buttonIcon1 = new com.doscom.TeaLinuxInstaller.template.ButtonIcon();
 
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                formMouseEntered(evt);
+            }
+        });
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("NanumGothic", 0, 12)); // NOI18N
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -48,7 +69,7 @@ public class PanelIDE extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(buttonIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                 .addContainerGap())
@@ -60,11 +81,19 @@ public class PanelIDE extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 21, Short.MAX_VALUE)))
+                        .addComponent(buttonIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 43, Short.MAX_VALUE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
+        // TODO add your handling code here:
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jTextArea1.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_formMouseEntered
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.doscom.TeaLinuxInstaller.template.ButtonIcon buttonIcon1;
     private javax.swing.JScrollPane jScrollPane1;

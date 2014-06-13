@@ -50,7 +50,7 @@
               <Component id="panelIDE9" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="panelIDE10" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,6 +59,7 @@
     <Component class="com.doscom.TeaLinuxInstaller.view.PanelIDE" name="panelIDE1">
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIDE1MouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIDE1MouseEntered"/>
       </Events>
     </Component>
     <Component class="com.doscom.TeaLinuxInstaller.view.PanelIDE" name="panelIDE2">
@@ -72,18 +73,39 @@
       </Events>
     </Component>
     <Component class="com.doscom.TeaLinuxInstaller.view.PanelIDE" name="panelIDE4">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIDE4MouseClicked"/>
+      </Events>
     </Component>
     <Component class="com.doscom.TeaLinuxInstaller.view.PanelIDE" name="panelIDE5">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIDE5MouseClicked"/>
+      </Events>
     </Component>
     <Component class="com.doscom.TeaLinuxInstaller.view.PanelIDE" name="panelIDE6">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIDE6MouseClicked"/>
+      </Events>
     </Component>
     <Component class="com.doscom.TeaLinuxInstaller.view.PanelIDE" name="panelIDE7">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIDE7MouseClicked"/>
+      </Events>
     </Component>
     <Component class="com.doscom.TeaLinuxInstaller.view.PanelIDE" name="panelIDE8">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIDE8MouseClicked"/>
+      </Events>
     </Component>
     <Component class="com.doscom.TeaLinuxInstaller.view.PanelIDE" name="panelIDE9">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIDE9MouseClicked"/>
+      </Events>
     </Component>
     <Component class="com.doscom.TeaLinuxInstaller.view.PanelIDE" name="panelIDE10">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIDE10MouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

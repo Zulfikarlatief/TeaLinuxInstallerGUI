@@ -29,29 +29,29 @@ public class MainInstaller extends javax.swing.JPanel {
         
         initComponents();
        // setOpaque(false);
-        buttonIcon1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/codeblocks.png")).getImage());
-        buttonIcon2.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/netbeans.png")).getImage());
-        buttonIcon3.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/eclipse.png")).getImage());
-        buttonIcon4.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/anjuta.png")).getImage());
-        buttonIcon5.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/BoaConstructor.jpg")).getImage());
-        buttonIcon6.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/glade.png")).getImage());
-        buttonIcon7.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/bluefish-editor.png")).getImage());
-        buttonIcon8.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/gambas.png")).getImage());
-        buttonIcon9.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/aptana.png")).getImage());
-        
-        
-        
-        image = new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/")).getImage();
+//        buttonIcon1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/codeblocks.png")).getImage());
+//        buttonIcon2.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/netbeans.png")).getImage());
+//        buttonIcon3.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/eclipse.png")).getImage());
+//        buttonIcon4.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/anjuta.png")).getImage());
+//        buttonIcon5.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/BoaConstructor.jpg")).getImage());
+//        buttonIcon6.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/glade.png")).getImage());
+//        buttonIcon7.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/bluefish-editor.png")).getImage());
+//        buttonIcon8.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/gambas.png")).getImage());
+//        buttonIcon9.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/aptana.png")).getImage());
+//        
+//        
+//        
+//        image = new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/")).getImage();
     }
     
-    @Override
-    public void paintComponent(Graphics g){
-        Graphics2D gd = (Graphics2D) g.create();
-        image = new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/")).getImage();
-        gd.drawImage(image, 0, 0,getWidth(),getHeight(),null);
-        gd.dispose();
-        super.paintComponent(g);
-    }
+//    @Override
+//    public void paintComponent(Graphics g){
+//        Graphics2D gd = (Graphics2D) g.create();
+//        image = new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/")).getImage();
+//        gd.drawImage(image, 0, 0,getWidth(),getHeight(),null);
+//        gd.dispose();
+//        super.paintComponent(g);
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -616,7 +616,7 @@ public class MainInstaller extends javax.swing.JPanel {
 
     private void buttonEclipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEclipseActionPerformed
         // TODO add your handling code here:
-        controller.eclipseInstall();
+//        controller.eclipseInstall();
     }//GEN-LAST:event_buttonEclipseActionPerformed
 
     private void buttonIcon4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIcon4ActionPerformed
@@ -625,12 +625,12 @@ public class MainInstaller extends javax.swing.JPanel {
 
     private void buttonAnjutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAnjutaActionPerformed
         // TODO add your handling code here:
-        controller.anjutaInstall();
+//        controller.anjutaInstall();
     }//GEN-LAST:event_buttonAnjutaActionPerformed
 
     private void buttonBoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBoaActionPerformed
         // TODO add your handling code here:
-        controller.boaConstructorInstall();
+//        controller.boaConstructorInstall();
     }//GEN-LAST:event_buttonBoaActionPerformed
 
     private void buttonIcon5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIcon5ActionPerformed
@@ -648,7 +648,7 @@ public class MainInstaller extends javax.swing.JPanel {
 
     private void buttonBlueFishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBlueFishActionPerformed
         // TODO add your handling code here:
-        controller.bluefishInstall();
+//        controller.bluefishInstall();
     }//GEN-LAST:event_buttonBlueFishActionPerformed
 
     private void buttonIcon8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIcon8ActionPerformed
@@ -657,7 +657,7 @@ public class MainInstaller extends javax.swing.JPanel {
 
     private void buttinGambasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttinGambasActionPerformed
         // TODO add your handling code here:
-        controller.gambasInstall();
+//        controller.gambasInstall();
     }//GEN-LAST:event_buttinGambasActionPerformed
 
     private void buttonAptanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAptanaActionPerformed

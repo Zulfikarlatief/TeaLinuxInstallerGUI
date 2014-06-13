@@ -16,7 +16,7 @@ public class OpenTerminal {
     public static void main(String[] args)
 	{
 		try  {
-			Process proc=Runtime.getRuntime().exec("su");
+			Process proc=Runtime.getRuntime().exec("sh /media/zword/tealinux/teaide/pencil-i386.tea");
 			JOptionPane read=new JOptionPane(new InputStreamReader(proc.getInputStream()));
 
 			while(read.getWantsInput())

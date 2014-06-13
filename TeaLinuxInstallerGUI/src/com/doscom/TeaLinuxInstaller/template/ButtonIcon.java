@@ -4,6 +4,7 @@
  */
 package com.doscom.TeaLinuxInstaller.template;
 
+import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -31,7 +32,7 @@ public class ButtonIcon extends JButton{
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                setOver(false);
+                setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
             }
 
             @Override

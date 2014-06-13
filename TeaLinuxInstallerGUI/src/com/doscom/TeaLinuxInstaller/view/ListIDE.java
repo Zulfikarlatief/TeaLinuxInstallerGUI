@@ -4,6 +4,9 @@
  */
 package com.doscom.TeaLinuxInstaller.view;
 
+import com.doscom.TeaLinuxInstaller.controller.Description;
+import com.doscom.TeaLinuxInstaller.controller.Directory;
+import java.io.File;
 import javax.swing.ImageIcon;
 
 /**
@@ -14,13 +17,45 @@ public class ListIDE extends javax.swing.JPanel {
     
     
     InstallerFrame frame;
+    public Directory directory;
+    
+    String user = System.getProperty("user.name"); 
+        
     
     /**
      * Creates new form ListIDE
      */
     public ListIDE() {
         initComponents();
-       
+        loadAsset();
+        directory = new Directory();
+    }
+    
+    private void loadAsset(){
+        // load logo
+        panelIDE1.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/codeblocks.png");
+        panelIDE2.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/netbeans.png");
+        panelIDE3.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/aptana.png");
+        panelIDE4.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/geany.png");
+        panelIDE5.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/glade.png");
+        panelIDE6.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/lazarus.png");
+        panelIDE7.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/pycharm.png");
+        panelIDE8.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/pencil.png");
+        panelIDE9.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/brackets.png");
+        panelIDE10.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/androidstudio.png");
+        
+        
+        //load deskripsi singkat
+        panelIDE2.getjTextArea1().setText(Description.sNetBeans);
+        panelIDE1.getjTextArea1().setText(Description.sCodeBlock);
+        panelIDE3.getjTextArea1().setText(Description.sAptana);
+        panelIDE4.getjTextArea1().setText(Description.sGeany);
+        panelIDE5.getjTextArea1().setText(Description.sGlade);
+        panelIDE6.getjTextArea1().setText(Description.sLazarus);
+        panelIDE7.getjTextArea1().setText(Description.sPycharm);
+        panelIDE8.getjTextArea1().setText(Description.sPencil);
+        panelIDE9.getjTextArea1().setText(Description.sBrackets);
+        panelIDE10.getjTextArea1().setText(Description.sAdt);
         
     }
 
@@ -35,6 +70,11 @@ public class ListIDE extends javax.swing.JPanel {
     
     
     public void allPanelRise(){
+        
+        if(!frame.install)
+            frame.getInstallButton().setEnabled(true);
+        
+        frame.getInstallButton().setText("Install");
         panelIDE1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panelIDE2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panelIDE3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -71,6 +111,9 @@ public class ListIDE extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 panelIDE1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panelIDE1MouseEntered(evt);
+            }
         });
 
         panelIDE2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -82,6 +125,48 @@ public class ListIDE extends javax.swing.JPanel {
         panelIDE3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 panelIDE3MouseClicked(evt);
+            }
+        });
+
+        panelIDE4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelIDE4MouseClicked(evt);
+            }
+        });
+
+        panelIDE5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelIDE5MouseClicked(evt);
+            }
+        });
+
+        panelIDE6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelIDE6MouseClicked(evt);
+            }
+        });
+
+        panelIDE7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelIDE7MouseClicked(evt);
+            }
+        });
+
+        panelIDE8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelIDE8MouseClicked(evt);
+            }
+        });
+
+        panelIDE9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelIDE9MouseClicked(evt);
+            }
+        });
+
+        panelIDE10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelIDE10MouseClicked(evt);
             }
         });
 
@@ -122,28 +207,134 @@ public class ListIDE extends javax.swing.JPanel {
                 .addComponent(panelIDE9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelIDE10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void panelIDE1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE1MouseClicked
-        // TODO add your handling code here:
-        allPanelRise();
-        panelIDE1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        frame.setDisplay("init");
-    }//GEN-LAST:event_panelIDE1MouseClicked
 
     private void panelIDE2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE2MouseClicked
         // TODO add your handling code here:
         allPanelRise();
         panelIDE2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("netbeans");
+        frame.setDescription("netbeans");
+        
+        if(directory.cek("netbeans")){   // jika file ada
+            frame.getInstallButton().setText("Uninstall");
+        }
     }//GEN-LAST:event_panelIDE2MouseClicked
+
+    private void panelIDE4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE4MouseClicked
+        // TODO add your handling code here:
+        allPanelRise();
+        panelIDE4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("geany");
+        frame.setDescription("geany");
+        
+        if(directory.cek("geany")){   // jika file ada
+            frame.getInstallButton().setText("Uninstall");
+        }
+    }//GEN-LAST:event_panelIDE4MouseClicked
+
+    private void panelIDE5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE5MouseClicked
+        // TODO add your handling code here:
+        allPanelRise();
+        panelIDE5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("glade");
+        frame.setDescription("glade");
+        
+        if(directory.cek("glade")){   // jika file ada
+            frame.getInstallButton().setText("Uninstall");
+        }
+    }//GEN-LAST:event_panelIDE5MouseClicked
 
     private void panelIDE3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE3MouseClicked
         // TODO add your handling code here:
         allPanelRise();
         panelIDE3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("aptana");
+        frame.setDescription("aptana");
+        
+        if(directory.cek("aptana")){   // jika file ada
+            frame.getInstallButton().setText("Uninstall");
+        }
     }//GEN-LAST:event_panelIDE3MouseClicked
+
+    // ga kepake
+    private void panelIDE1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panelIDE1MouseEntered
+
+    private void panelIDE1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE1MouseClicked
+        // TODO add your handling code here:
+        allPanelRise();
+        panelIDE1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("codeblock");
+        frame.setDescription("codeblock");
+
+        if(directory.cek("codeblock")){   
+            frame.getInstallButton().setText("Uninstall");
+        }
+    }//GEN-LAST:event_panelIDE1MouseClicked
+
+    private void panelIDE6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE6MouseClicked
+        // TODO add your handling code here:
+        allPanelRise();
+        panelIDE6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("lazarus");
+        frame.setDescription("lazarus");
+        
+        if(directory.cek("lazarus")){   // jika file ada
+            frame.getInstallButton().setText("Uninstall");
+        }
+    }//GEN-LAST:event_panelIDE6MouseClicked
+
+    private void panelIDE7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE7MouseClicked
+        // TODO add your handling code here:
+        allPanelRise();
+        panelIDE7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("pycharm");
+        frame.setDescription("pycharm");
+        
+        if(directory.cek("pycharm")){   // jika file ada
+            frame.getInstallButton().setText("Uninstall");
+        }
+    }//GEN-LAST:event_panelIDE7MouseClicked
+
+    private void panelIDE8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE8MouseClicked
+        // TODO add your handling code here:
+        allPanelRise();
+        panelIDE8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("pencil");
+        frame.setDescription("pencil");
+        
+        if(directory.cek("pencil")){   // jika file ada
+            frame.getInstallButton().setText("Uninstall");
+        }
+    }//GEN-LAST:event_panelIDE8MouseClicked
+
+    private void panelIDE9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE9MouseClicked
+        // TODO add your handling code here:
+        allPanelRise();
+        panelIDE9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("brackets");
+        frame.setDescription("brackets");
+        
+        if(directory.cek("brackets")){   // jika file ada
+            frame.getInstallButton().setText("Uninstall");
+        }
+    }//GEN-LAST:event_panelIDE9MouseClicked
+
+    private void panelIDE10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIDE10MouseClicked
+        // TODO add your handling code here:
+        allPanelRise();
+        panelIDE10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        frame.setDisplay("adt");
+        frame.setDescription("adt");
+        
+        if(directory.cek("adt")){   // jika file ada
+            frame.getInstallButton().setText("Uninstall");
+        }
+    }//GEN-LAST:event_panelIDE10MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.doscom.TeaLinuxInstaller.view.PanelIDE panelIDE1;

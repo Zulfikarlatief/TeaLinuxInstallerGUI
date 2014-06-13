@@ -17,8 +17,10 @@ import javax.swing.UnsupportedLookAndFeelException;
  *
  * @author zword
  */
-public class Main {
+public class Main {// Main class
    
+//    File pertama yang dijalankan
+    
     public static void main(String[] args) {
         try {
             // TODO code application logic here
@@ -30,8 +32,8 @@ public class Main {
                 public void run() {
                     FrameUtama frame;
                     try {
-                        frame = new FrameUtama();
-                        frame.setVisible(true);
+                        frame = new FrameUtama();// Panggil class Frame Utama di view
+                        frame.setVisible(true); // ditampilkan
                     } catch (IOException ex) {
                         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                     }

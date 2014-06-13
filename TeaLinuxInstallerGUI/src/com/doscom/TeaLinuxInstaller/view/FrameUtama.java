@@ -22,21 +22,38 @@ import javax.swing.UIManager;
  *
  * @author zword
  */
+
+// Loading frame pertama
+
 public class FrameUtama extends javax.swing.JFrame implements ActionListener{
-     Timer time = new Timer(3000, this);
+     Timer time = new Timer(3000, this); // Set timer 3 detik
+     InstallerFrame frame; 
     /**
      * Creates new form FrameUtama
      */
     public FrameUtama() throws IOException  {
         initComponents();
-        Image i = ImageIO.read(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/tealogo.png"));
+        Image i = ImageIO.read(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/tealogo.png")); // ambil gambar
         setIconImage(i);       
-
+        
+        
+        try {// set theme with jTatoo 
+            com.jtattoo.plaf.mcwin.McWinLookAndFeel.setTheme("Large-Font",
+                                                                "Java Swing","");
+            UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+            frame = new InstallerFrame(); // Memanggil Installer Frame
+        } catch (IOException ex) {
+            Logger.getLogger(FrameUtama.class.getName()).log(Level.SEVERE, null, ex);
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        
         this.removeNotify();
-        this.setUndecorated(true);
+        this.setUndecorated(true); // menghilangkan window
         this.addNotify();
         centerWindow();
-        time.start();
+        time.start(); // waktu dijalankan
         
     }
     
@@ -102,21 +119,13 @@ public class FrameUtama extends javax.swing.JFrame implements ActionListener{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.doscom.TeaLinuxInstaller.template.PanelBackground panelBackground2;
     // End of variables declaration//GEN-END:variables
-
+    
+//    Dijalankan ketika waktu habis
     @Override
     public void actionPerformed(ActionEvent arg0) {
-        try {
-            com.jtattoo.plaf.noire.NoireLookAndFeel.setTheme("Large-Font",
-                                                                "Java Swing","");
-            UIManager.setLookAndFeel("com.jtattoo.plaf.noire.NoireLookAndFeel");
-            new InstallerFrame().setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(FrameUtama.class.getName()).log(Level.SEVERE, null, ex);
-        } catch(Exception e){
-            e.printStackTrace();
-        }
         
-        this.dispose();
+        frame.setVisible(true); //Installer frame ditampilkan
+        this.dispose(); // frame ini dihapus
         time.stop();
     }
 }

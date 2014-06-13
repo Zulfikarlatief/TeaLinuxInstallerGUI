@@ -15,6 +15,8 @@ public class DisplayPanel extends javax.swing.JInternalFrame {
     /**
      * Creates new form DisplayPanel
      */
+    //class untuk mengatur Display
+    
     public DisplayPanel(String Ide) {
         initComponents();
         
@@ -28,8 +30,37 @@ public class DisplayPanel extends javax.swing.JInternalFrame {
     
     private void displaySelc(String Ide){
         if(Ide == "init")
-            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/KukichaDesk.png")).getImage());
-
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/jasmine.png")).getImage());
+        else if(Ide == "codeblock"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/codeblocks.png")).getImage());
+        }
+        else if(Ide == "netbeans"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/netbeans.png")).getImage());
+        }
+        else if(Ide == "aptana"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/aptana.png")).getImage());
+        }
+        else if(Ide == "geany"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/geany.png")).getImage());
+        }
+        else if(Ide == "glade"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/glade.png")).getImage());
+        }
+        else if(Ide == "lazarus"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/lazarus.png")).getImage());
+        }
+        else if(Ide == "pencil"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/pencil.png")).getImage());
+        }
+        else if(Ide == "pycharm"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/pycharm.png")).getImage());
+        }
+        else if(Ide == "brackets"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/brackets.png")).getImage());
+        }
+        else if(Ide == "adt"){
+            buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/adt.png")).getImage());
+        }
     } 
 
     /**
