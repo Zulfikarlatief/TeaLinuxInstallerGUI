@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.doscom.TeaLinuxInstaller.view;
+package com.doscom.TeaLinuxInstaller.other;
 
 import com.doscom.TeaLinuxInstaller.controller.IdeController;
 import java.awt.Graphics;
@@ -14,6 +14,8 @@ import javax.swing.ImageIcon;
  *
  * @author zword
  */
+
+// This class was not used in TeaLinuxIdeInstaller for Jasmine tea
 public class MainInstaller extends javax.swing.JPanel {
 
     /**

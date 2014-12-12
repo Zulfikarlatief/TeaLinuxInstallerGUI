@@ -13,6 +13,8 @@ import javax.swing.JTextArea;
  *
  * @author zword
  */
+/*  Class PanelIDE , cukup drag / seret kan file ke ListIDE untuk menambahkan IDE baru
+*/
 public class PanelIDE extends javax.swing.JPanel {
 
     /**

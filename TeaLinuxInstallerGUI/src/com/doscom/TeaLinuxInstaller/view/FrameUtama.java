@@ -58,7 +58,7 @@ public class FrameUtama extends javax.swing.JFrame implements ActionListener{
     }
     
 
-    
+    //method untuk menaruh frame ditengah layar monitor
     private void centerWindow(){
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 

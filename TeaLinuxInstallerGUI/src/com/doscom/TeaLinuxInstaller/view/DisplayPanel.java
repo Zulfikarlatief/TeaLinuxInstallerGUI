@@ -15,7 +15,7 @@ public class DisplayPanel extends javax.swing.JInternalFrame {
     /**
      * Creates new form DisplayPanel
      */
-    //class untuk mengatur Display
+    //class untuk mengatur Display utama
     
     public DisplayPanel(String Ide) {
         initComponents();
@@ -61,6 +61,7 @@ public class DisplayPanel extends javax.swing.JInternalFrame {
         else if(Ide == "adt"){
             buttonImage1.setImage(new ImageIcon(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/displays/adt.png")).getImage());
         }
+        //tambahan
     } 
 
     /**

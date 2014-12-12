@@ -14,6 +14,8 @@ import javax.swing.JPanel;
  *
  * @author zword
  */
+
+//Class berisi pengaturan panel background
 public class PanelBackground extends JPanel{
     private Image image;
     

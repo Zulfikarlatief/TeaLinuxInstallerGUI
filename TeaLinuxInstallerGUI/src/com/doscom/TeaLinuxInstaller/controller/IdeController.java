@@ -14,8 +14,15 @@ import javax.swing.JOptionPane;
  *
  * @author zword
  */
+
+/*  Class ini berisi command terminal utnuk mengeksekusi file binary/IDE yang ada dalam DVD 
+    Var:
+    String command  : sebagai penampung perintah yang akan di eksekusi terminal
+    File file       : sebagai penampung path file , dalam class ini digunakan untuk mengecek sisa space apakah mencukupi / tidak
+*/
 public class IdeController {
     private String command;
+    public Directory directory;
     
     File file ;
 
@@ -28,7 +35,9 @@ public class IdeController {
         return command;
     }
     
-    
+    /*
+        Method untuk mengeksekusi perintah terminal dar var command
+    */
     public void bashExecute(){
             try {
                 String line;
@@ -85,16 +94,22 @@ public class IdeController {
     public void aptanaInstall(){
 //        makedir();
         file = new File("/opt");
+        directory = new Directory();
         if(file.getUsableSpace()<1000000000l){
             JOptionPane.showMessageDialog(null, "Memori hardisk penuh");
         }else{
-            setCommand("gksudo -- (unzip /media/"+user+"/tealinux/teaide"
-                    + "/aptanastudio3.zip -d /opt/) cp /media/"+user+"/tealinux"
-                    + "/teaide/pintasan/aptana.desktop /usr/share/applications/");
+            setCommand("gksudo -- unzip /media/"+user+"/tealinux/teaide"
+                    + "/aptanastudio3.zip -d /opt/");
             bashExecute();
-            setCommand("cp /media/"+user+"/tealinux/teaide/pintasan/aptana.desktop /home/"+user+"/Desktop/");
-            bashExecute();
-
+            if(!directory.cek("pintasan")){
+                setCommand("mkdir /home/"+user+"/.local/share/applications/");
+                bashExecute();
+            }
+            
+            if(directory.cek("aptana")){
+                setCommand("cp /media/"+user+"/tealinux/teaide/pintasan/aptana.desktop /home/"+user+"/.local/share/applications/");
+                bashExecute();
+            }
         }
     }
     
@@ -111,17 +126,24 @@ public class IdeController {
     public void pycharmInstall(){
 //        makedir();
         file = new File("/opt");
+        directory = new Directory();
         if(file.getUsableSpace()<1000000000l){
             JOptionPane.showMessageDialog(null, "Memori hardisk penuh");
         }
         else{
-            setCommand("gksudo -- (unzip /media/"+user+"/tealinux/teaide"
-                    + "/pycharm.zip -d /opt/) cp /media/"+user+"/tealinux/teaide"
-                    + "/pintasan/pycharm.desktop  /usr/share/applications/");
+            setCommand("gksudo -- unzip /media/"+user+"/tealinux/teaide"
+                    + "/pycharm.zip -d /opt/");
             bashExecute();
-            setCommand("cp /media/"+user+"/tealinux/teaide/pintasan/pycharm.desktop  /home/"+user+"/Desktop/");
-            bashExecute();
-
+            
+            if(!directory.cek("pintasan")){
+                setCommand("mkdir /home/"+user+"/.local/share/applications/");
+                bashExecute();
+            }
+            
+            if(directory.cek("pycharm")){
+                setCommand("cp /media/"+user+"/tealinux/teaide/pintasan/pycharm.desktop  /home/"+user+"/.local/share/applications/");
+                bashExecute();
+            }
  
         }
     }
@@ -140,17 +162,27 @@ public class IdeController {
         
 //        makedir();
         file = new File("/opt");
+        directory = new Directory();
         if(file.getUsableSpace()<2000000000l){
             JOptionPane.showMessageDialog(null, "Memori hardisk penuh");
         }
         else{
-            setCommand("gksudo -- (unzip /media/"+user+"/tealinux/teaide"
-                    + "/adt-bundle.zip -d /opt/) cp /media/"+user+"/tealinux"
-                    + "/teaide/pintasan/adt.desktop  /usr/share/applications/");
+            setCommand("gksudo -- unzip /media/"+user+"/tealinux/teaide"
+                    + "/adt-bundle.zip -d /opt/");
             bashExecute();
-            setCommand("cp /media/"+user+"/tealinux/teaide/pintasan/adt.desktop  /home/"+user+"/Desktop/");
-            bashExecute();
+            if(!directory.cek("pintasan")){
+                setCommand("mkdir /home/"+user+"/.local/share/applications/");
+                bashExecute();
+            }
+            
+            if(directory.cek("adt")){
+                setCommand("gksudo -- chown -Rf "+user+" /opt/adt-bundle");
+                bashExecute();
 
+                
+                setCommand("cp /media/"+user+"/tealinux/teaide/pintasan/adt.desktop  /home/"+user+"/.local/share/applications/");
+                bashExecute();
+            }
         }
     }
     
@@ -178,10 +210,13 @@ public class IdeController {
     }
     
     public void aptanaUnInstall(){
-        setCommand("gksudo -- (rm -rf /opt/aptanastudio3) rm /usr/share/applications/aptana.desktop");
+        directory = new Directory();
+        setCommand("gksudo -- rm -rf /opt/aptanastudio3");
         bashExecute();
-        setCommand("rm /home/"+user+"/Desktop/aptana.desktop");
-        bashExecute();
+        if(!directory.cek("aptana")){
+            setCommand("rm /home/"+user+"/.local/share/applications/aptana.desktop");
+            bashExecute();
+        }
     }
     
     public void geanyUnInstall(){
@@ -190,16 +225,18 @@ public class IdeController {
     }
     
     public void lazarusUnInstall(){
-        setCommand("gksudo -- apt-get remove lazarus -y");
+        setCommand("gksudo -- apt-get remove --purge lazarus* -y");
         bashExecute();
     }
     
     public void pycharmUnInstall(){
-        setCommand("gksudo -- (rm -rf /opt/pycharm) rm /usr/share/applications/pycharm.desktop");
+        directory = new Directory();
+        setCommand("gksudo -- rm -rf /opt/pycharm");
         bashExecute();
-        setCommand("rm /home/"+user+"/Desktop/pycharm.desktop");
-        bashExecute();
-
+        if(!directory.cek("pycharm")){
+            setCommand("rm /home/"+user+"/.local/share/applications/pycharm.desktop");
+            bashExecute();
+        }
     }
     
     public void bracketsUnInstall(){
@@ -208,10 +245,12 @@ public class IdeController {
     }
     
     public void adtUnInstall(){
-        setCommand("gksudo -- (rm -rf /opt/adt-bundle) rm /usr/share/applications/adt.desktop");
+        setCommand("gksudo -- rm -rf /opt/adt-bundle");
         bashExecute();
-        setCommand("rm /home/"+user+"/Desktop/adt.desktop");
-        bashExecute();
+        if(!directory.cek("adt")){
+            setCommand("rm /home/"+user+"/.local/share/applications/adt.desktop");
+            bashExecute();
+        }
 
     }
 }

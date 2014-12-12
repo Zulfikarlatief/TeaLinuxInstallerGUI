@@ -17,6 +17,9 @@ import javax.swing.border.EmptyBorder;
  *
  * @author zword
  */
+
+
+//Class berisi pengaturan tampilan untuk icon ide
 public class ButtonIcon extends JButton{
     private boolean over;
     private Image image;

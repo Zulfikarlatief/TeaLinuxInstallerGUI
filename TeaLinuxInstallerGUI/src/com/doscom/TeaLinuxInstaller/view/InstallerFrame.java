@@ -32,6 +32,8 @@ import javax.swing.text.DefaultCaret;
  */
 
 // Frame Utama
+/*  Class Frame Utama kontrol utama dari semua file
+*/
 public class InstallerFrame extends javax.swing.JFrame implements ActionListener{
 
     /**
@@ -56,6 +58,7 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
         controller = new IdeController();
        // this.initForm();
         this.setResizable(false);// fungsi agar tidak bisa diubah ukurannya
+        // logo tea di icon window
         Image i = ImageIO.read(getClass().getResource("/com/doscom/TeaLinuxInstaller/picture/tealogo.png"));
         setIconImage(i);       
         centerWindow();
@@ -66,7 +69,7 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
     }
     
     
-    private void setScroll(){// scroll handle sementara 
+    private void setScroll(){//Text Area scroll handle sementara 
        DefaultCaret caret = (DefaultCaret) textAreaDescription.getCaret();
         caret.setUpdatePolicy(DefaultCaret.NEVER_UPDATE);
     }
@@ -139,9 +142,9 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
     
     
     private void warning() throws IOException{
-        
+            
         JOptionPane jop = new JOptionPane(
-            "Please Insert TeaLinux 6.0 DVD ",
+            "Please Insert TeaLinux 6.0 DVD ",//Rubah nama sesuai versi
             JOptionPane.QUESTION_MESSAGE,
             JOptionPane.DEFAULT_OPTION
             );
@@ -175,7 +178,7 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        remake1 = new com.doscom.TeaLinuxInstaller.view.Remake();
+        remake1 = new com.doscom.TeaLinuxInstaller.template.Remake();
         jScrollPane1 = new javax.swing.JScrollPane();
         listIDE2 = new com.doscom.TeaLinuxInstaller.view.ListIDE();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -372,7 +375,7 @@ public class InstallerFrame extends javax.swing.JFrame implements ActionListener
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private com.doscom.TeaLinuxInstaller.view.ListIDE listIDE2;
-    private com.doscom.TeaLinuxInstaller.view.Remake remake1;
+    private com.doscom.TeaLinuxInstaller.template.Remake remake1;
     private javax.swing.JTextArea textAreaDescription;
     // End of variables declaration//GEN-END:variables
 

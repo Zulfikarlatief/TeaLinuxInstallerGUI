@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.doscom.TeaLinuxInstaller.controller;
+package com.doscom.TeaLinuxInstaller.other;
 
 import java.io.File;
 
@@ -12,6 +12,10 @@ import java.io.File;
  *
  * @author zword
  */
+
+
+// This class was not Used
+
 public class CheckSpace {
     public static void main(String[] args) {
         File file = new File("/opt");

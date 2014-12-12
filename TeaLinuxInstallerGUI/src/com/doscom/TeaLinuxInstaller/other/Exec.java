@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.doscom.TeaLinuxInstaller.controller;
+package com.doscom.TeaLinuxInstaller.other;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -12,13 +12,16 @@ import javax.swing.JOptionPane;
  *
  * @author zword
  */
+// This class was not Used
+
+
 public class Exec {
     // class ga kepake
     public static void main(String args[]) {
             Exec e = new Exec();
             
-            e.exec("gksu -- && cp /home/zword/Music/a  /home/zword/Desktop/ cp /home/zword/Music/a /usr/share/applications/");
-//            e.exec("");
+//            e.exec("gksu -- && cp /home/zword/Music/a  /home/zword/Desktop/ cp /home/zword/Music/a /usr/share/applications/");
+            e.exec("whoami ; whoami");
     }
     
     private void exec(String command){

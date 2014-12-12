@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 
-package com.doscom.TeaLinuxInstaller.view;
+package com.doscom.TeaLinuxInstaller.template;
 
 /**
  *
  * @author zword
  */
+
+
 public class Remake extends javax.swing.JPanel {
 
     /**

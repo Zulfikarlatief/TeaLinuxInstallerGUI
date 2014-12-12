@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.doscom.TeaLinuxInstaller.controller;
+package com.doscom.TeaLinuxInstaller.other;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,6 +14,10 @@ import java.io.InputStreamReader;
  *
  * @author zword
  */
+
+// This class was not Used
+
+
 public class Sudo {
     // class ga kepake
     public static void main(String[] args) throws IOException {

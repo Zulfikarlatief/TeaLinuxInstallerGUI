@@ -13,6 +13,10 @@ import javax.swing.ImageIcon;
  *
  * @author zword
  */
+
+/*  Class ini berisi Panel IDE , segala pengaturan tentang banyaknya IDE 
+    dapat diatur disini , class ini juga mengatur tentang event click pada panel untuk IDE
+*/
 public class ListIDE extends javax.swing.JPanel {
     
     
@@ -31,6 +35,8 @@ public class ListIDE extends javax.swing.JPanel {
         directory = new Directory();
     }
     
+    
+    
     private void loadAsset(){
         // load logo
         panelIDE1.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/codeblocks.png");
@@ -45,7 +51,7 @@ public class ListIDE extends javax.swing.JPanel {
         panelIDE10.setLogo("/com/doscom/TeaLinuxInstaller/picture/icons/androidstudio.png");
         
         
-        //load deskripsi singkat
+        //load deskripsi singkat pada textarea
         panelIDE2.getjTextArea1().setText(Description.sNetBeans);
         panelIDE1.getjTextArea1().setText(Description.sCodeBlock);
         panelIDE3.getjTextArea1().setText(Description.sAptana);
@@ -68,7 +74,7 @@ public class ListIDE extends javax.swing.JPanel {
     }
     
     
-    
+    // method untuk mengangkat semua panel
     public void allPanelRise(){
         
         if(!frame.install)

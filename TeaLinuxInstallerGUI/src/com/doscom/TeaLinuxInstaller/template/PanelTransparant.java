@@ -13,6 +13,8 @@ import javax.swing.JPanel;
  *
  * @author zword
  */
+
+// pengaturan panel transparant
 public class PanelTransparant extends JPanel{
     private Color color;
 

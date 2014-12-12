@@ -10,6 +10,10 @@ package com.doscom.TeaLinuxInstaller.controller;
  *
  * @author zword
  */
+
+/*  Class ini berisi String deskripsi dari ide yang akan tampil di TextArea utama
+    dan text area pada panel ListIDE
+*/
 public class Description {
     public static String init = "Selamat Datang Di TeaLinux IDE Installer";
     

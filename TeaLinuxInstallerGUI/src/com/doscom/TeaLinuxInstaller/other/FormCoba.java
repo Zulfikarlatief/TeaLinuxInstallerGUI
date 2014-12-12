@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.doscom.TeaLinuxInstaller.controller;
+package com.doscom.TeaLinuxInstaller.other;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,6 +15,9 @@ import javax.swing.JOptionPane;
  *
  * @author zword
  */
+
+// This class was not Used
+
 public class FormCoba extends javax.swing.JFrame {
 
     /**
